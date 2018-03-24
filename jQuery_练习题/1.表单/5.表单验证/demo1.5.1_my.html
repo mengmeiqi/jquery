@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1.5.1</title>
+    <style>
+        #test{
+            height:200px;
+            width:600px;
+        }
+        .p{
+            height:50px;
+            width:600px;
+            position:relative;
+        }
+        label{
+            float:left;
+            width:100px;
+            text-align: right;
+        }
+        .suggest{
+            position:absolute;
+            left:300px;
+            top:0;
+            width:200px;
+            height:22px;
+            background:#FFE0E9;
+            display:none;
+        }
+        .bg{
+            float:left;
+            height:22px;
+            width:22px;
+            background: url(reg3.gif);
+        }
+        .suggest span{
+            float:left;
+        }
+        .suggest1{
+            position:absolute;
+            left:300px;
+            top:0;
+            width:100px;
+            height:22px;
+            background:#E9FBEB;
+            display:none;
+        }
+        .bg1{
+            float:left;
+            height:22px;
+            width:22px;
+            background: url(reg4.gif);
+        }
+        .suggest1 span{
+            float:left;
+        }
+        #send{
+            margin-left:30px;
+            margin-right: 10px;;
+        }
+    </style>
+</head>
+<body>
+<div id="test">
+    <div class="p">
+        <label for="name" class="pre">用户名： </label>
+        <input name="name" type="text"/>
+        <span>*</span>
+        <div class="suggest"><div class="bg"></div><span>请输入至少6位的用户名</span></div>
+        <div class="suggest1"><div class="bg1"></div><span>输入正确</span></div>
+    </div>
+
+    <div class="p">
+        <label for="mail" class="pre">邮箱： </label>
+        <input name="mail" type="text"/>
+        <span>*</span>
+        <div class="suggest"><div class="bg"></div><span>请输入正确的E-Mail地址</span></div>
+        <div class="suggest1"><div class="bg1"></div><span>输入正确</span></div>
+    </div>
+    <div class="p">
+        <label for="profile" class="pre">个人资料： </label>
+        <input name="profile" type="text"/>
+    </div>
+    <div class="p">
+        <button id="send">提交</button>
+        <button id="res">重置</button>
+    </div>
+</div>
+<script src="../../../jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $ins = $(" input");
+        if($ins.val() == ""){
+            $ins.focus(function(){
+                $(this).siblings(".suggest").css("display","block");
+            });
+        }
+
+        /* $ins.blur(function(){
+         $(this).siblings(".suggest").css("display","none");
+         });*/
+        $("input[name='name']").on("keyup",function(){
+            var str = $(this).val();
+            if(str.length == 6){
+                $(this).siblings(".suggest").css("display","none").siblings(".suggest1").css("display","block");
+            }else{
+                $(this).siblings(".suggest").css("display","block").siblings(".suggest1").css("display","none");
+            }
+        });
+        $("input[name='mail']").on("keyup",function(){
+            var str1 = $(this).val();
+            var reg = /@/;
+            var reg1 = /\.com/;
+            var result = reg.test(str1);
+            var result1 = reg1.test(str1);
+            if(result && result1){
+                $(this).siblings(".suggest").css("display","none").siblings(".suggest1").css("display","block");
+            }else{
+                $(this).siblings(".suggest").css("display","block").siblings(".suggest1").css("display","none");
+            }
+        });
+        $("#send").on("click",function(){
+            alert("注册成功,密码已发到你的邮箱,请查收.");
+        });
+        $("#res").on("click",function(){
+            $ins.val("");
+            $(".suggest1").css("display","none");
+        });
+    });
+</script>
+</body>
+</html>
