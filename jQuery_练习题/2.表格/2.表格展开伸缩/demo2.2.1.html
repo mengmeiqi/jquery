@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo2.2.1</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        th{
+            border-bottom: 1px #000 solid;
+        }
+        td,th{
+            height:30px;
+            width:90px;
+            line-height:30px;
+            text-align: center;
+            padding:5px;
+            float:left;
+        }
+        .parent{
+            background:#FFF38F;
+        }
+        .child_row_01,.child_row_02,.child_row_03{
+            background: #FFFFEE;
+        }
+        .selected{
+            background: #FF6500;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+    </thead>
+    <tbody>
+
+    <tr class="parent" id="row_01"><td>前台设计组</td></tr>
+    <tr class="child_row_01"><td>张三</td><td>男</td><td>浙江</td></tr>
+    <tr class="child_row_01"><td>李四</td><td>男</td><td>广州</td></tr>
+
+    <tr class="parent" id="row_02"><td>前台开发组</td></tr>
+    <tr class="child_row_02"><td>王五</td><td>男</td><td>深圳</td></tr>
+    <tr class="child_row_02"><td>赵六</td><td>女</td><td>浙江</td></tr>
+
+    <tr class="parent" id="row_03"><td>后台开发组</td></tr>
+    <tr class="child_row_03"><td>MIKE</td><td>男</td><td>哈尔滨</td></tr>
+    <tr class="child_row_03"><td>CARRY</td><td>女</td><td>沈阳</td></tr>
+
+    </tbody>
+</table>
+<script src="../../../jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $(" .parent").on("click",function(){
+            $(this).toggleClass("selected").siblings(".child_"+ this.id).toggle();
+        });
+    });
+</script>
+</body>
+</html>
