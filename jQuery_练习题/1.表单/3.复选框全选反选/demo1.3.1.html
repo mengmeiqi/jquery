@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1.3.1</title>
+</head>
+<body>
+<form action="" selected="selected">
+    <fieldset>
+        <legend>反选全选</legend>
+        <h1>你最喜欢的运动是什么？</h1>
+        <input type="checkbox" name="hobby"/>篮球
+        <input type="checkbox" name="hobby"/>足球
+        <input type="checkbox" name="hobby"/>乒乓球
+        <input type="checkbox" name="hobby"/>羽毛球
+        <br/>
+        <button id="check-all" type="button">全选</button>
+        <button id="check-no" type="button">全不选</button>
+        <button id="check-reverse" type="button">反选</button>
+        <button id="submit" type="button">提交</button>
+    </fieldset>
+</form>
+<script src="../../../jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $hobby = $("input[name='hobby']");
+        $("#check-all").on("click",function(){
+            $hobby.prop("checked",true);
+        });
+
+        $("#check-no").on("click",function(){
+            $hobby.prop("checked",false);
+        });
+
+        $("#check-reverse").on("click",function(){
+            $hobby.each(function(){
+                this.checked = !this.checked ;
+            });
+        });
+    });
+</script>
+</body>
+</html>

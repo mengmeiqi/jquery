@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1.3.2</title>
+</head>
+<body>
+<form action="" selected="selected">
+    <fieldset>
+        <legend>反选全选</legend>
+        <h1>你最喜欢的运动是什么？</h1>
+        <input type="checkbox" name="hobby"/>篮球
+        <input type="checkbox" name="hobby"/>足球
+        <input type="checkbox" name="hobby"/>乒乓球
+        <input type="checkbox" name="hobby"/>羽毛球
+        <input type="checkbox" id="checked-all"/>全选/全不选
+        <br/>
+        <button id="check-reverse" type="button">反选</button>
+        <button id="submit" type="button">提交</button>
+    </fieldset>
+</form>
+<script src="../../../jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $hobby = $("input[name='hobby']");
+        $all = $("#checked-all");
+        $("#check-reverse").on("click",function(){
+            $hobby.each(function(){
+                this.checked = !this.checked ;
+            });
+        });
+        $all.on("click",function(){
+            $hobby.each(function(){
+                if(this.checked){
+                    $hobby.prop("checked",true);
+                }else{
+                    $hobby.prop("checked",false);
+                }
+            });
+        });
+        $hobby.on("click",function(){
+            var flag = false;
+            $hobby.each(function(){
+                if(!this.checked){
+                    flag = false;
+                }
+            });
+            if(flag){
+                $("#checked-all").prop("checked",true);
+            }else{
+                $("#checked-all").prop("checked",false);
+            }
+        });
+    });
+</script>
+</body>

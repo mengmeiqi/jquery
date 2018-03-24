@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1.3.3</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #add{
+            width:100px;
+            margin:100px auto;
+        }
+        #btn{
+            height:30px;
+            width:50px;
+        }
+        li{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="add">
+    <button id="btn">ADD</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+</div>
+<script src="../../../jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        var number = 3;
+        $("#btn").on("click",function(){
+            $("ul").append("<li>"+ number +"</li>");
+            number++;
+        });
+        $("ul").on("click","li",function(){
+            alert( this.innerHTML);
+        });
+    });
+</script>
+</body>
+</html>
