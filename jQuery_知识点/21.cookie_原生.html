@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>21.cookie_原生</title>
+</head>
+<body>
+<script>
+    //        document.cookie = "username=zhangsan;";
+
+    //         var date = new Date() ;
+    //        date.setDate(date.getDate()+20);
+    //添加cookie
+    function addCookie(key,val,expires){
+        var str = key + "="+ val;
+        if(expires){
+            var date = new Date();
+            date.setDate(date.getDate()+expires);
+            str += ";expires= " + date.toUTCString();
+        }
+        document.cookie = str ;
+    }
+    //得到cookie
+    function getCookie(key){
+        var arr = document.cookie.split(";");
+        for(var i=0;i<arr.length;i++){
+            var temp = arr[i].split("=");
+            if(temp[0].trim() == key){
+                return temp[1];
+            }
+        }
+    }
+    //删除cookie
+    function delCookie(key){
+        var date = new Date();
+        date.setDate(date.getDate()-100);
+        document.cookie = key + "= abc ; expires = " + date.toUTCString();
+    }
+
+</script>
+
+</body>
+</html>

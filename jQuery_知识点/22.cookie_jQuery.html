@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>22.cookie_jQuery</title>
+</head>
+<body>
+<script src="jquery-1.11.2.js"></script>
+<script src="jquery.cookie.js"></script>
+<script>
+    $(function(){
+
+        //创建cookie
+        $.cookie("name","zhangsan",{ expires:8 });
+        $.cookie("age","20",{expires:20});
+
+        //得到cookie
+        console.log($.cookie("age"));
+
+        //删除cookie
+        $.cookie("sex","man",{expires:-1});
+        console.log($.cookie("sex"));
+
+
+    });
+</script>
+</body>
+</html>
