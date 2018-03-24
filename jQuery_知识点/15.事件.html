@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>15.事件</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li id="foo">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script src="jquery-1.11.2.js"></script>
+<script>
+
+    $(function(){
+        //jQuery里面的事件委托（事件代理）
+        /*$("ul").on("click","li",function(){
+         console.log($(this).html());
+         });*/
+
+        /*$('#foo').on('click', function() {
+         alert($(this).text());
+         });
+         $('#foo').trigger('click');*/
+
+
+
+    });
+
+
+
+</script>
+</body>
+</html>

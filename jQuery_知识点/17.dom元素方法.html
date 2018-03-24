@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>17.DOM元素方法</title>
+</head>
+<body>
+<ul id="nav">
+    <li>001</li>
+    <li>002</li>
+    <li class="third">003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+<div id="div1"></div>
+<script src="jquery-1.11.2.js"></script>
+<script>
+
+    var obj1 = {
+        name:"zhangsan",
+        age:4,
+        sex:"男"
+    };
+    var obj2 = {
+        school:"weichuang"
+    };
+    var obj3 = {
+        name:"lisi"
+    };
+
+    $(function(){
+//            console.log($("li").get(0));//根据索引获取
+        //.index() 返回当前的索引
+        /*$("li").on("click",function(){
+         console.log($(this).index());
+         });*/
+        $.extend(obj1,obj2);
+        console.log(obj1);
+
+        $("#div1").load("18.login.html");
+
+
+    });
+
+</script>
+</body>
+</html>

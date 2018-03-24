@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>19.折叠菜单</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        li{
+            list-style:none;
+        }
+        #folding{
+            width:150px;
+            height:244px;
+            margin:100px auto;
+        }
+        .menu h3{
+            height:30px;
+            width: 150px;
+            background: #000;
+            color:#fff;
+            line-height:30px;
+            text-align:center;
+            cursor:pointer;
+        }
+        .level{
+            width:148px;
+            height:90px;
+            border:1px #000 solid;
+            display:none;
+        }
+        .level li{
+            height:30px;
+            width:150px;
+            line-height:30px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<ul id="folding">
+    <li class="menu">
+        <h3>管理区</h3>
+        <ul class="level">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+    <li class="menu">
+        <h3>交流区</h3>
+        <ul class="level">
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </li>
+</ul>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $(".menu h3").on("click",function(){
+            $(this).next().stop(false,true).slideToggle(1000);
+            /*两个参数 .stop(clearQueue,jumpToEnd)
+             clearQueue
+             一个布尔值，指示是否取消以列队动画，默认false
+             jumpToEnd
+             一个布尔值，指示是否当前动画立即完成，默认false*/
+        });
+    });
+</script>
+</body>
+</html>

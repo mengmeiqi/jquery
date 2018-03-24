@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>14.遍历</title>
+    <style>
+        /*ul li{
+            background: #00ff00;
+        }*/
+        .aa{
+            background: #00ff00;
+        }
+    </style>
+</head>
+<body>
+<!--<ul id="nav">
+    <li class="first">1</li>
+    <li>2</li>
+    <li class="third">3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>
+        7
+        <ul id="nav-2">
+            <li>01</li>
+            <li>02</li>
+            <li>03</li>
+            <li>04</li>
+        </ul>
+    </li>
+    <li>
+        <ul>
+            <li>what</li>
+        </ul>
+    </li>
+</ul>-->
+
+
+
+
+
+<ul>
+    <li><span>Click me!</span></li>
+    <li>You can also <span>Click me!</span></li>
+</ul>
+
+
+
+<!--<div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>-->
+
+<!--<ul>-->
+<!--<li>list <strong>item 1</strong></li>-->
+<!--<li><span>list item 2</span></li>-->
+<!--<li>list item 3</li>-->
+<!--</ul>-->
+
+<!--<div class="container">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    <br /><br />
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+    laboris nisi ut aliquip ex ea commodo consequat.
+    <br /> <br />
+    Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur.
+</div>-->
+
+<!--<ul class="first">-->
+<!--<li class="foo">list item 1</li>-->
+<!--<li>list item 2</li>-->
+<!--<li class="bar">list item 3</li>-->
+<!--</ul>-->
+
+
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+//            $("ul li").eq(1).css("background","red");
+//            $('li').filter(':even').css('background-color', 'red');
+        /*$('li').filter(function(index) {
+         return index % 3 == 2;
+         }).css('background-color', 'red');*/
+//            $('li').first().css('background-color', 'red');
+//            $('li').has('ul').css('background-color', 'red');
+        /* $("ul").click(function(event) {
+         var $target = $(event.target);
+         if ( $target.is("li") ) {
+         $target.css("background-color", "red");
+         }
+         });*/
+//            $('li').last().css('background-color', 'red');
+//            $('li').not(':even').css('background-color', 'red');
+        /*$(':checkbox').map(function() {
+         return this.id;
+         }).get().join();*/
+//            $('li').slice(2, 4).css('background-color', 'red');
+//            $('li').slice(2).css('background-color', 'red');
+        /*$("div").css("border", "2px solid red")
+         .add("p")
+         .css("background", "yellow");*/
+        /*$('.container').contents().filter(function() {
+         return this.nodeType == 3;
+         })
+         .wrap('<p></p>')
+         .end()
+         .filter('br')
+         .remove();*/
+
+
+        /*$( "li" ).each(function( index ) {
+         console.log( index + ": "+ $(this).text());
+         });*/
+
+
+        /*$('ul.first').find('.foo').css('background-color', 'red')
+         .end().find('.bar').css('background-color', 'green');*/
+
+
+
+//            $(".third").nextAll().addBack().css("background","red");
+
+
+//            $("#nav").children("li").addClass("aa");
+//            $("#nav").find("ul").css("background","red");
+//            console.log($("#nav").find());
+
+
+        $( document ).on("click", function( e ) {
+//        $( e.target ).parents("li").css("background", "#f00");
+            $( e.target ).closest("li").css("background", "#f00");
+        });
+
+
+
+
+
+    });
+</script>
+</body>
+</html>
