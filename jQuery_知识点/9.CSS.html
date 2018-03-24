@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>9.css</title>
+    <style>
+        .aa{
+            background: #f00;
+        }
+        .bb{
+            color: #00ff00;
+        }
+        /*#div1{
+            background: #ff0000;
+        }*/
+    </style>
+</head>
+<body>
+<div id="div1">DIV</div>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+
+        //在原生js里面怎么改变class名
+//            var oDiv1 = document.getElementById("div1");
+
+        //既有 aa 又有 bb ； 如果像这样bb 会把 aa 覆盖掉
+        /*oDiv1.className = "aa";
+         oDiv1.className = "bb";*/
+
+        //若想不覆盖掉，则同时设置 aa bb
+//            oDiv1.className = "aa bb" ;
+
+
+        //原生和jQuery的区别：原生的className是把之前的所有去掉，改成新的className
+        //jQuery中的addClass是保留原有的className基础上增加className
+        var $div1 = $("#div1");
+//            $div1.addClass("aa").addClass("bb");
+
+
+//            $div1.css("background","red");
+        //当css中参数多的时候，css中参数可以是一个对象
+        /*$div1.css({
+         background:"red",
+         color:"green",
+         fontSize:"16px" //在js里面如果操作css，横线要去掉，后面逢单词首字母大写
+         });*/
+
+
+        //css的另外一种写法
+        //什么时候遇到这种情况？需要计算时候，有返回值，得到width
+        /* $div1.css("width",function(){
+         //逻辑运算
+         var w;
+         w = 200;
+         return w;//在css中可以不写单位，默认为px
+         });*/
+
+
+        //hasClass()
+//            $div1.hasClass("aa");//true/false     不能链式操作
+//            $div1.removeClass("aa");
+
+
+        $div1.on("click",function(){
+            $(this).toggleClass("aa");
+        });
+
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>10.尺寸</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #div1{
+            background: #ff0000;
+            height:200px;
+            width:200px;
+            padding:20px;
+            border:20px solid #00ff00;
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    DIVDIV
+</div>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    //原生
+    var oDiv1 = document.getElementById("div1");
+    console.log(" offsetWidth: "+oDiv1.offsetWidth);
+    console.log(" offsetHeight: "+oDiv1.offsetHeight);
+    console.log(" offsetParent: "+oDiv1.offsetParent);
+    console.log(" offsetTop: "+oDiv1.offsetTop);
+    console.log(" offsetLeft: "+oDiv1.offsetLeft);
+    //        content: 200   content+padding: 240  content+padding+border: 280  content+padding+border+margin:320
+
+
+
+    //jQuery
+    $(function(){
+        $div1 = $("#div1");
+        console.log("$div1.width():"+$div1.width());
+        console.log("$div1.height():"+$div1.height());
+        console.log("$div.innerWidth():"+$div1.innerWidth());
+        console.log("$div1.innerHeight()"+$div1.innerHeight());
+        console.log("$div1.outerWidth()"+$div1.outerWidth());
+        console.log("$div1.outerHeight()"+$div1.outerHeight());
+        console.log("$div1.outerWidth(true)"+$div1.outerWidth(true));
+        console.log("$div1.outerHeight(true)"+$div1.outerHeight(true));
+    });
+    /*
+     * 原生：
+     * offset ：  content + padding + border
+     * jQuery:
+     * width() height() : content
+     * innerWidth() innerHeight() : content + padding
+     * outerWidth() outerWidth(): content + padding + border
+     * outerWidth(true) outerHeight(true): content + padding + border + margin
+     * */
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>11.位置</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            height:2000px;
+        }
+        #div1{
+            background:#cc0000;
+            height:400px;
+            width:400px;
+            position:relative;
+            top:100px;
+            left:100px;
+            color:#fff;
+        }
+        #div2{
+            background: #00ff00;
+            height:200px;
+            width:200px;
+            position:absolute;
+            top:50px;
+            left:50px;
+            color:#08BECE;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    DIV1
+    <div id="div2">DIV2</div>
+</div>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    //原生
+    var oDiv1 = document.getElementById("div1");
+    var oDiv2 = document.getElementById("div2");
+    console.log("oDiv2.offsetLeft: "+oDiv2.offsetLeft);
+    console.log("oDiv2.offsetTop: "+oDiv2.offsetTop);
+
+    //jQuery
+    $(function(){
+        $div2 = $("#div2");
+        console.log("$div2.offset() : "+$div2.offset());//返回的是一个对象 相对于文档距离
+        console.log("$div2.offset().left : "+$div2.offset().left);
+        console.log("$div2.offset().top : "+$div2.offset().top);
+        console.log("$div2.offsetParent():"+$div2.offsetParent());//返回的是一个对象 最近的已经定位的祖先元素jq
+//            $div2.offsetParent().css("background","#000000");
+        console.log("$div2.position(): "+$div2.position());//返回的是一个对象 相对于离他最近的已经定位的祖先元素距离
+        console.log("$div2.position().left : "+$div2.position().left);
+        console.log("$div2.position().top : "+$div2.position().top);
+    });
+
+</script>
+</body>
+</html>

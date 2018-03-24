@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>13.dom</title>
+</head>
+<body>
+<div class="container">
+    <div class="hello">Hello</div>
+    <div class="goodbye">Goodbye</div>
+</div>
+
+<div class="container">
+    <div class="new">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="inner">
+        <div class="new">Hello</div>
+    </div>
+    <div class="inner">
+        <div class="new">Goodbye</div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="inner">
+        Hello
+        <p>Test</p>
+    </div>
+    <div class="inner">
+        Goodbye
+        <p>Test</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="inner">
+        <p>Test</p>
+        Hello
+    </div>
+    <div class="inner">
+        <p>Test</p>
+        Goodbye
+    </div>
+</div>
+
+
+<div class="container">
+    <h2>Greetings</h2>
+    <div class="inner">Hello</div>
+    <div class="inner">Goodbye</div>
+</div>
+
+<div class="container">
+    <h2>Greetings</h2>
+    <div class="inner">Hello</div>
+    <div class="inner">Goodbye</div>
+</div>
+
+<div class="container">
+    <h2>Greetings</h2>
+    <div class="inner">Hello</div>
+    <p>Test</p>
+    <div class="inner">Goodbye</div>
+    <p>Test</p>
+</div>
+
+
+<div class="container">
+    <h2>Greetings</h2>
+    <p>Test</p>
+    <div class="inner">Hello</div>
+    <p>Test</p>
+    <div class="inner">Goodbye</div>
+</div>
+
+<div class="container">
+    <div class="hello">Hello</div>
+    <div class="goodbye">Goodbye</div>
+</div>
+
+<div class="container">
+    <div class="goodbye">Goodbye</div>
+</div>
+
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    //        $('.hello').clone().appendTo('.goodbye');
+    //        $('.inner').wrapAll('<div class="new" />');
+    //        $('.inner').wrapInner('<div class="new" />');
+    //        $('.inner').append('<p>Test</p>');
+    //        $('<p>Test</p>').appendTo('.inner');
+    //        $('.inner').prepend('<p>Test</p>');
+    //        $('<p>Test</p>').prependTo('.inner');
+    //        $('.inner').after('<p>Test</p>');
+    //        $('.inner').before('<p>Test</p>');
+    //        $('h2').insertAfter($('.container'));
+    //        $('<p>Test</p>').insertBefore('.inner');
+    //        $('.hello').empty();
+    //        $('.hello').remove();
+
+
+
+
+
+
+
+
+    /*
+     * 插入的是子元素
+     *
+     *
+     * 内容后面追加
+     * .appendTo() 把子元素追加到父元素上面去    子元素.appendTo（父元素）
+     * 原生appendChild  父元素.appendChild （子元素）
+     * 链式操作对父元素起作用
+     *
+     * .append()  父元素追加一个子元素  父元素.append（子元素）
+     * 链式操作对子元素起作用
+     *
+     * $div1.html() 获取值
+     * $div1.html("abc") 设置值
+     * $div1.html("<h1>abc</h1>")  是在内容里面加标签还是把字符串加到里面去？是否能解析？
+     * 能解析成一个标签
+     *
+     * 相对应的是text() 不能解析成一个标签
+     *
+     *
+     *
+     * 内容前面追加
+     * .prepend()  .prependTo()
+     *
+     *
+     *
+     *
+     * 插入的兄弟元素
+     *
+     * .after() .before()  父元素.after(子元素)
+     * .insertAfter() .insertBefore()  子元素.insertAfter(父元素)
+     *
+     *
+     *
+     * .empty()  清空的意思
+     * .remove()  删除的意思  原生：removeChild()
+     *
+     *
+     *
+     * .replaceAll()  换多个
+     * .replaceWith() 换一个
+     * */
+</script>
+</body>
+</html>
