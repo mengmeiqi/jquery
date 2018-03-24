@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>4.input_contains</title>
+</head>
+<body>
+<input id="search" type="text" value="123"/>
+<ul id="menu">
+    <li>xiaomi</li>
+    <li>huawei</li>
+    <li>iphone</li>
+</ul>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $("#search").on("keyup",function(){
+            if(this.value!=""){
+                $("#menu li:contains(" + this.value + ")").css("background","red");
+            }else{
+                $("#menu li").css("background","transparent");
+            }
+        })
+    });
+</script>
+</body>
+</html>
