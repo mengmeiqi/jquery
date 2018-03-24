@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>demo1.2.1</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #wrap{
+            height:300px;
+            width:500px;
+            margin:100px auto;
+            /*overflow: hidden;*/
+        }
+        .cap{
+            height:20px;
+            width:40px;
+            margin-right:10px;
+            border:1px solid #ccc;
+            margin-bottom:5px;
+            background: #ff0000;
+            color:#fff;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <div id="wrap">
+        <div id="caption">
+            <span id="big" class="cap">放大</span>
+            <span id="small" class="cap">缩小</span>
+        </div>
+        <div id="text">
+            <textarea id="msg" cols="30" rows="10">多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化多行文本变化</textarea>
+        </div>
+    </div>
+</form>
+<script src="../../../jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        var $msg = $("#msg") ;
+        $("#big").on("click",function(){
+            $msg.height($msg.height() < 500 ? $msg.height()+50 : $msg.height());
+        });
+        $("#small").on("click",function(){
+            $msg.height($msg.height() > 50 ? $msg.height()-50 : $msg.height());
+        });
+    });
+</script>
+</body>
+</html>
